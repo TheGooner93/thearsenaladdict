@@ -12,7 +12,8 @@ var fs = require('fs');
 var download = require('download-file');
 
 var app = express();
-var url = 'https://ics.fixtur.es/v2/arsenal.ics?2e20f9b87f16bdb8';
+var url = 'https://ics.fixtur.es/v2/arsenal.ics?fba191619381b181'; /*unofficial*/
+// var url = 'https://ics.ecal.com/ecal-sub/5ca33a74f8f200d45b8b4567/Arsenal%20FC.ics'; /*official*/
 var arsenalCalendarJSON = {};
 var options = {
     directory: "./",
@@ -22,8 +23,9 @@ var options = {
 //On start of server, download the ICS and build JSON
 download(url, options, function (err) {
     if(!err){
-        console.log("Error:" + err);
         arsenalCalendarJSON = ical2json.convert(fs.readFileSync('./arsenal.ics').toString());
+    } else { 
+        console.log("Error:" + err);
     }
 });
 
