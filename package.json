@@ -1,5 +1,5 @@
 {
-  "name": "nodeServer",
+  "name": "ArsenalFCFixtures",
   "description": "Demo REST API with Node",
   "version": "0.0.1",
   "private": true,
@@ -7,15 +7,18 @@
     "download-file": "^0.1.5",
     "express": "3.x",
     "fs": "0.0.1-security",
+    "ical-date-parser": "^4.0.0",
     "ical2json": "^1.2.0",
     "jquery": "^3.2.1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Mohammed Ehab",
   "license": "ISC"
 }
