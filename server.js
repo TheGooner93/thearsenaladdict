@@ -92,6 +92,14 @@ app.get("/fixtures", function(req, res) {
   res.send({ latestFixture: oLatestFixture, futureFixtures: aFutureFixtures });
 });
 
-app.listen(3001);
+//serve static assets if in production - DONE FOR HEROKU INTEGRATION
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  // app.use(express.static("client/build"));
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  // });
+}
+const port = process.env.PORT || 5000;
 
-console.log("SHE WORE SHE WORE..");
+app.listen(port, () => console.log("COYG!!"));
