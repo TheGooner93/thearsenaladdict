@@ -41,21 +41,53 @@ app.get("/", function(req, res) {
   res.send("Change the URL to see fixtures");
 });
 
-app.get("/arsenal", function(req, res) {
+app.get("/fixtures", function(req, res) {
   var currentDate = new Date();
-  var aFixtures = arsenalCalendarJSON.VCALENDAR[0].VEVENT;
-  var finalFixtures = aFixtures
-    .filter(fixture => {
-      return new Date(parseIcalDate(fixture.DTSTART)) >= currentDate;
-    })
-    .map(fixture => {
+  var aInterimFixtures = arsenalCalendarJSON.VCALENDAR[0].VEVENT;
+  var sStartDate,
+    sEndDate,
+    aPastFixtures = [],
+    oLatestFixture,
+    oCurrentFixture,
+    aFutureFixtures = [];
+  for (var fixture of aInterimFixtures) {
+    sStartDate = new Date(parseIcalDate(fixture.DTSTART));
+    sEndDate = new Date(parseIcalDate(fixture.DTEND));
+    if (sEndDate < currentDate) {
+      //Past Fixtures
+      aPastFixtures.push(fixture);
+    } else if (sStartDate <= currentDate && sEndDate >= currentDate) {
+      //Current Fixtures
+      oCurrentFixture = fixture;
+    } else {
+      //Future fixtures
+      aFutureFixtures.push(fixture);
+    }
+  }
+
+  if (!oCurrentFixture) {
+    //If no ongoing fixture exists, get the latest available past fixture
+    //TODO: may not require all the past fixtures
+    aPastFixtures.map(fixture => {
       return (fixture = {
         ...fixture,
         DTSTART: parseIcalDate(fixture["DTSTART"]),
         DTEND: parseIcalDate(fixture["DTEND"])
       });
     });
-  res.send(finalFixtures);
+  }
+  oLatestFixture = oCurrentFixture || aPastFixtures[aPastFixtures.length - 1];
+
+  aFutureFixtures.map(fixture => {
+    //Mutuate the array to alter the date strings, to be ISO compliant for easier consumption
+    return (fixture = {
+      ...fixture,
+      DTSTART: parseIcalDate(fixture["DTSTART"]),
+      DTEND: parseIcalDate(fixture["DTEND"])
+    });
+  });
+
+  res.send({ latestFixture: oLatestFixture, futureFixtures: aFutureFixtures });
 });
 
 app.listen(3001);
