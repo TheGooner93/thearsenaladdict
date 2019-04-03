@@ -1,7 +1,7 @@
 {
   "name": "ArsenalFCFixtures",
   "description": "REST API with Node, to retrieve consumable Arsenal FC calendar data",
-  "version": "1.0.",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "download-file": "^0.1.5",

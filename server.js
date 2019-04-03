@@ -5,8 +5,7 @@ var download = require("download-file");
 var parseIcalDate = require("ical-date-parser");
 
 var app = express();
-var url =
-  "https://ics.fixtur.es/v2/arsenal.ics?fba191619381b181"; /*unofficial*/
+var url = "https://ics.fixtur.es/v2/arsenal.ics?fba191619381b181";
 var arsenalCalendarJSON = {};
 var fileReadPromise;
 var options = {
@@ -68,18 +67,21 @@ app.get("/fixtures", function(req, res) {
   if (!oCurrentFixture) {
     //If no ongoing fixture exists, get the latest available past fixture
     //TODO: may not require all the past fixtures
-    aPastFixtures.map(fixture => {
+    aPastFixtures = aPastFixtures.map(fixture => {
       return (fixture = {
         ...fixture,
         DTSTART: parseIcalDate(fixture["DTSTART"]),
         DTEND: parseIcalDate(fixture["DTEND"])
       });
     });
+  } else {
+    oCurrentFixture.DTSTART = parseIcalDate(oCurrentFixture.DTSTART);
+    oCurrentFixture.DTEND = parseIcalDate(oCurrentFixture.DTEND);
   }
   oLatestFixture = oCurrentFixture || aPastFixtures[aPastFixtures.length - 1];
 
-  aFutureFixtures.map(fixture => {
-    //Mutuate the array to alter the date strings, to be ISO compliant for easier consumption
+  aFutureFixtures = aFutureFixtures.map(fixture => {
+    //Mutate the array to alter the date strings, to be ISO compliant for easier consumption
     return (fixture = {
       ...fixture,
       DTSTART: parseIcalDate(fixture["DTSTART"]),
