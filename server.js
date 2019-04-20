@@ -1,14 +1,15 @@
-var express = require("express");
-var ical2json = require("ical2json");
-var fs = require("fs");
-var download = require("download-file");
-var parseIcalDate = require("ical-date-parser");
+const express = require("express");
+const ical2json = require("ical2json");
+const fs = require("fs");
+const download = require("download-file");
+const parseIcalDate = require("ical-date-parser");
+const path = require("path");
 
-var app = express();
-var url = "https://ics.fixtur.es/v2/arsenal.ics?fba191619381b181";
+const app = express();
+const url = "https://ics.fixtur.es/v2/arsenal.ics?fba191619381b181";
 
 var fileReadPromise;
-var options = {
+const options = {
   directory: "./",
   filename: "arsenal.ics"
 };
