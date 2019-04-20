@@ -1,0 +1,55 @@
+.app {
+  text-align: center;
+}
+
+.app-opaque {
+  opacity: 0.9;
+}
+
+.app-header,
+.app-footer {
+  max-width: inherit;
+  background: linear-gradient(45deg, #fdc830 30%, #f37335 90%);
+}
+
+.app-headings {
+  text-align: left;
+  border-radius: 7px;
+  background: linear-gradient(45deg, #ffdf00 30%, #9c824a 90%);
+}
+
+.app-card-upcoming {
+  color: whitesmoke;
+  border-radius: 7px;
+  background: linear-gradient(45deg, #aa5252 30%, #e44537 90%);
+  transition: all 0.2s ease-in-out;
+}
+
+.app-card-latest {
+  color: whitesmoke;
+  border-radius: 7px;
+  background: linear-gradient(45deg, #007ff7 30%, #0a27aa 90%);
+  transition: all 0.2s ease-in-out;
+}
+
+.app-card-upcoming:hover {
+  transform: scale(1.05);
+  /* background-image: url("https://media.giphy.com/media/8vF1liUI4PWxVZLZx0/giphy.gif");
+  background-repeat: no-repeat; */
+}
+
+.app-card-latest:hover {
+  transform: scale(1.05);
+}
+
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -10;
+  transform: translate(-50%, -50%);
+}
