@@ -30,10 +30,6 @@ download(url, options, function(err) {
   }
 });
 
-app.get("/", function(req, res) {
-  res.send("Change the URL to see fixtures");
-});
-
 app.get("/fixtures", function(req, res) {
   //Execute only on resolving of file read Promise created on server startup
   fileReadPromise &&
