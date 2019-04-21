@@ -31,7 +31,7 @@ class FixtureList extends Component {
                 </Col>
               ) : (
                 <Col xs="12" sm="12" xl="12">
-                  <div className="container app-headings ml-1">
+                  <div className="container mt-1" style={{ textAlign: "left" }}>
                     <h3>No Available Fixture</h3>
                   </div>
                 </Col>
@@ -53,7 +53,7 @@ class FixtureList extends Component {
                 ))
               ) : (
                 <Col xs="12" sm="12" xl="12">
-                  <div className="container app-headings ml-1">
+                  <div className="container mt-1" style={{ textAlign: "left" }}>
                     <h3>No Scheduled Fixtures</h3>
                   </div>
                 </Col>
