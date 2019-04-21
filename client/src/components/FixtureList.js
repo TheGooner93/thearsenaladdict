@@ -12,7 +12,7 @@ class FixtureList extends Component {
     this.props.getFixtures();
   }
   render() {
-    const { latestFixture, futureFixtures } = this.props.fixtures;
+    const { latestFixture, futureFixtures, isLoading } = this.props.fixtures;
     return (
       <Container className="app-content">
         {latestFixture && futureFixtures ? (
@@ -25,6 +25,11 @@ class FixtureList extends Component {
               </Col>
             </Row>
             <Row>
+              {isLoading ? (
+                <Col xs="12" sm="12" xl="12">
+                  <img src="../loader.gif" alt="Loading..." type="image/gif" />
+                </Col>
+              ) : null}
               {latestFixture && Object.keys(latestFixture).length ? (
                 <Col xs="12" sm="12" xl="12">
                   <FixtureCard fixture={latestFixture} />

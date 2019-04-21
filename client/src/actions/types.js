@@ -1,1 +1,2 @@
 export const GET_FIXTURES = "GET_FIXTURES";
+export const FIXTURES_LOADING = "FIXTURES_LOADING";

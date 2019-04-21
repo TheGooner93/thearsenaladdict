@@ -1,12 +1,18 @@
-import { GET_FIXTURES } from "../actions/types";
+import { GET_FIXTURES, FIXTURES_LOADING } from "../actions/types";
 
 const initialState = {
   latestFixture: {},
-  futureFixtures: []
+  futureFixtures: [],
+  isLoading: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case FIXTURES_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload
+      };
     case GET_FIXTURES:
       return {
         ...state,
