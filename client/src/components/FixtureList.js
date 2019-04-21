@@ -25,11 +25,6 @@ class FixtureList extends Component {
               </Col>
             </Row>
             <Row>
-              {isLoading ? (
-                <Col xs="12" sm="12" xl="12">
-                  <img src="../loader.gif" alt="Loading..." type="image/gif" />
-                </Col>
-              ) : null}
               {latestFixture && Object.keys(latestFixture).length ? (
                 <Col xs="12" sm="12" xl="12">
                   <FixtureCard fixture={latestFixture} />
@@ -37,7 +32,15 @@ class FixtureList extends Component {
               ) : (
                 <Col xs="12" sm="12" xl="12">
                   <div className="container mt-1" style={{ textAlign: "left" }}>
-                    <h3>No Available Fixture</h3>
+                    {isLoading ? (
+                      <img
+                        src="../loader.gif"
+                        alt="Loading..."
+                        type="image/gif"
+                      />
+                    ) : (
+                      <h3>No Available Fixture</h3>
+                    )}
                   </div>
                 </Col>
               )}
@@ -50,6 +53,11 @@ class FixtureList extends Component {
               </Col>
             </Row>
             <Row>
+              {isLoading ? (
+                <Col xs="12" sm="12" xl="12">
+                  <img src="../loader.gif" alt="Loading..." type="image/gif" />
+                </Col>
+              ) : null}
               {futureFixtures && futureFixtures.length ? (
                 futureFixtures.map(fixture => (
                   <Col key={fixture.UID} xs="12" sm="6" xl="4">
@@ -59,7 +67,15 @@ class FixtureList extends Component {
               ) : (
                 <Col xs="12" sm="12" xl="12">
                   <div className="container mt-1" style={{ textAlign: "left" }}>
-                    <h3>No Scheduled Fixtures</h3>
+                    {isLoading ? (
+                      <img
+                        src="../loader.gif"
+                        alt="Loading..."
+                        type="image/gif"
+                      />
+                    ) : (
+                      <h3>No Scheduled Fixtures</h3>
+                    )}
                   </div>
                 </Col>
               )}
