@@ -53,11 +53,6 @@ class FixtureList extends Component {
               </Col>
             </Row>
             <Row>
-              {isLoading ? (
-                <Col xs="12" sm="12" xl="12">
-                  <img src="../loader.gif" alt="Loading..." type="image/gif" />
-                </Col>
-              ) : null}
               {futureFixtures && futureFixtures.length ? (
                 futureFixtures.map(fixture => (
                   <Col key={fixture.UID} xs="12" sm="6" xl="4">
