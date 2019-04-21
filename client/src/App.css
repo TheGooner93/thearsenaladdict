@@ -2,13 +2,19 @@
   text-align: center;
 }
 
-.app-opaque {
-  opacity: 0.9;
+.app-header {
+  background: linear-gradient(45deg, #fdc830 30%, #f37335 90%);
+  padding: 10px;
 }
 
-.app-header,
+.app-content {
+  padding-bottom: 110px;
+}
 .app-footer {
-  max-width: inherit;
+  position: relative;
+  bottom: 0px;
+  height: 40px;
+  width: 100%;
   background: linear-gradient(45deg, #fdc830 30%, #f37335 90%);
 }
 

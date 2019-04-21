@@ -5,7 +5,7 @@ class AllFixtures extends Component {
   render() {
     return (
       <Container>
-        <Navbar light className="mt-1 mb-3 rounded app-header app-opaque">
+        <Navbar light className="mt-1 mb-3 rounded app-header">
           <NavbarBrand href="/">
             <h2>The Arsenal Addict</h2>
           </NavbarBrand>

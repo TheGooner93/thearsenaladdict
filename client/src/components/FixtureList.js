@@ -14,7 +14,7 @@ class FixtureList extends Component {
   render() {
     const { latestFixture, futureFixtures } = this.props.fixtures;
     return (
-      <Container className="app-opaque">
+      <Container className="app-content">
         {latestFixture && futureFixtures ? (
           <div>
             <Row>
