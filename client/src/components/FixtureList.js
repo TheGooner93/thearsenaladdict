@@ -31,17 +31,22 @@ class FixtureList extends Component {
                 </Col>
               ) : (
                 <Col xs="12" sm="12" xl="12">
-                  <div className="container mt-1" style={{ textAlign: "left" }}>
-                    {isLoading ? (
+                  {isLoading ? (
+                    <div className="container mt-1">
                       <img
                         src="../loader.gif"
                         alt="Loading..."
                         type="image/gif"
                       />
-                    ) : (
+                    </div>
+                  ) : (
+                    <div
+                      className="container mt-1"
+                      style={{ textAlign: "left" }}
+                    >
                       <h3>No Available Fixture</h3>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </Col>
               )}
             </Row>
@@ -61,22 +66,22 @@ class FixtureList extends Component {
                 ))
               ) : (
                 <Col xs="12" sm="12" xl="12">
-                  <div className="container mt-1" style={{ textAlign: "left" }}>
-                    {isLoading ? (
+                  {isLoading ? (
+                    <div className="container mt-1">
                       <img
                         src="../loader.gif"
                         alt="Loading..."
                         type="image/gif"
                       />
-                    ) : (
-                      <img
-                        src="../loader.gif"
-                        alt="Loading..."
-                        type="image/gif"
-                      />
-                      // <h3>No Scheduled Fixtures</h3>
-                    )}
-                  </div>
+                    </div>
+                  ) : (
+                    <div
+                      className="container mt-1"
+                      style={{ textAlign: "left" }}
+                    >
+                      <h3>No Scheduled Fixtures</h3>
+                    </div>
+                  )}
                 </Col>
               )}
             </Row>
