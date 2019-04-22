@@ -69,7 +69,12 @@ class FixtureList extends Component {
                         type="image/gif"
                       />
                     ) : (
-                      <h3>No Scheduled Fixtures</h3>
+                      <img
+                        src="../loader.gif"
+                        alt="Loading..."
+                        type="image/gif"
+                      />
+                      // <h3>No Scheduled Fixtures</h3>
                     )}
                   </div>
                 </Col>
