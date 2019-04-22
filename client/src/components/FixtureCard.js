@@ -21,8 +21,8 @@ export default function FixtureCard(props) {
     sCardSubtitle = fixture.SUMMARY.substring(compEndIndex + 1).trim();
   }
   //if there is a score suffix
-  if (sCardSubtitle.search(/\(\d+\-\d+\)/g) !== -1) {
-    suffixStartIndex = sCardSubtitle.search(/\(\d+\-\d+\)/g);
+  if (sCardSubtitle.search(/\(\d+-\d+\)/g) !== -1) {
+    suffixStartIndex = sCardSubtitle.search(/\(\d+-\d+\)/g);
     ///sScore ie. score is derived from the sCardSubtitle which is nothing but a fixture.SUMMARY derivative
     sScore = sCardSubtitle.substring(suffixStartIndex);
     sCardSubtitle = sCardSubtitle.substring(0, suffixStartIndex).trim();
