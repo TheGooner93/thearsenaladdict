@@ -1,5 +1,6 @@
 .app {
   text-align: center;
+  height: 100%;
 }
 
 .app-header {
@@ -8,7 +9,7 @@
 }
 
 .app-content {
-  padding-bottom: 110px;
+  padding-bottom: 40px;
 }
 .app-footer {
   position: relative;

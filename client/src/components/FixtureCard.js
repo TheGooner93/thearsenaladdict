@@ -50,15 +50,13 @@ export default function FixtureCard(props) {
           <h6>{sCardSubtitle}</h6>
         </CardSubtitle>
         <CardText>
-          <h6>
-            {new Date(fixture.DTSTART).toDateString()},
-            {new Date(fixture.DTSTART).toLocaleTimeString()}
-          </h6>
+          {new Date(fixture.DTSTART).toDateString()},
+          {new Date(fixture.DTSTART).toLocaleTimeString()}
         </CardText>
         <CardText>
-          <h6 style={{ fontWeight: "bold" }}>
+          <strong>
             {sCompetition ? sCompetition : "English Premier League"}
-          </h6>
+          </strong>
         </CardText>
       </CardBody>
     </Card>
