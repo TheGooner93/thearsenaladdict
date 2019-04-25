@@ -26,15 +26,16 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  margin-bottom: 5px;
 }
 
 .app-footer {
   background: linear-gradient(45deg, #fdc830 30%, #f37335 90%);
   height: 40px;
-  margin-bottom: 5px;
 }
 
 .app-footer-content {
+  padding: 10px;
 }
 
 .app-headings {
