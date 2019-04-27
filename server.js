@@ -30,12 +30,14 @@ download(url, options, function(err) {
   }
 });
 
+//Main route to fetch all the fixtures
 app.get("/fixtures", function(req, res) {
   //Execute only on resolving of file read Promise created on server startup
   fileReadPromise &&
     fileReadPromise
       .then(function(fileContents) {
         var arsenalCalendarJSON = {};
+        //Build JSON data
         arsenalCalendarJSON = ical2json.convert(fileContents.toString());
 
         var currentDate = new Date();
@@ -51,6 +53,7 @@ app.get("/fixtures", function(req, res) {
           oCurrentFixture,
           aFutureFixtures = [];
 
+        //Separate past, current and future fixtures
         if (aInterimFixtures && aInterimFixtures.length) {
           for (var fixture of aInterimFixtures) {
             sStartDate = new Date(parseIcalDate(fixture.DTSTART));

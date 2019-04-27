@@ -20,7 +20,7 @@ export default function FixtureCard(props) {
 
     sCardSubtitle = fixture.SUMMARY.substring(compEndIndex + 1).trim();
   }
-  //if there is a score suffix
+  //If there is a score suffix
   if (sCardSubtitle.search(/\(\d+-\d+\)/g) !== -1) {
     suffixStartIndex = sCardSubtitle.search(/\(\d+-\d+\)/g);
     ///sScore ie. score is derived from the sCardSubtitle which is nothing but a fixture.SUMMARY derivative
@@ -55,6 +55,7 @@ export default function FixtureCard(props) {
         </CardText>
         <CardText>
           <strong>
+            {/*For now, just support EPL, and default competition names*/}
             {sCompetition ? sCompetition : "English Premier League"}
           </strong>
         </CardText>
