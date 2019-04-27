@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 import { getFixtures } from "../actions/fixtureActions";
 import FixtureCard from "./FixtureCard";
+import Spinner from "./Spinner";
 
 class FixtureList extends Component {
   componentDidMount() {
@@ -32,13 +33,7 @@ class FixtureList extends Component {
               ) : (
                 <Col xs="12" sm="12" xl="12">
                   {isLoading ? (
-                    <div className="container mt-1">
-                      <img
-                        src="../loader.gif"
-                        alt="Loading..."
-                        type="image/gif"
-                      />
-                    </div>
+                    <Spinner />
                   ) : (
                     <div
                       className="container mt-1"
@@ -67,13 +62,7 @@ class FixtureList extends Component {
               ) : (
                 <Col xs="12" sm="12" xl="12">
                   {isLoading ? (
-                    <div className="container mt-1">
-                      <img
-                        src="../loader.gif"
-                        alt="Loading..."
-                        type="image/gif"
-                      />
-                    </div>
+                    <Spinner />
                   ) : (
                     <div
                       className="container mt-1"
