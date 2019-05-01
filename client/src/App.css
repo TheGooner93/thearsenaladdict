@@ -58,14 +58,15 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.app-card-upcoming:hover {
-  transform: scale(1.05);
-  /* background-image: url("https://media.giphy.com/media/8vF1liUI4PWxVZLZx0/giphy.gif");
-  background-repeat: no-repeat; */
-}
-
-.app-card-latest:hover {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .app-card-upcoming:hover {
+    transform: scale(1.05);
+    /* background-image: url("https://media.giphy.com/media/8vF1liUI4PWxVZLZx0/giphy.gif");
+    background-repeat: no-repeat; */
+  }
+  .app-card-latest:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* video {
