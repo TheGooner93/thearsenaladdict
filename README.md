@@ -1,6 +1,6 @@
 # thearsenaladdict
 
-Web app to view football mathc fixtures, across all leagues, for Arsenal FC.
+Web app to view football match fixtures, across all leagues, for Arsenal FC.
 Implemented using the MERN stack.
 
 ## Pre-requisites
