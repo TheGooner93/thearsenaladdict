@@ -1,4 +1,4 @@
-# thearsenaladdict
+# The Arsenal Addict
 
 Web app to view football match fixtures, across all leagues, for Arsenal FC.
 Implemented using the MERN stack.
@@ -10,7 +10,7 @@ You will need NodeJS and npm installed and ready to go.
 ## Live App
 https://thearsenaladdict.herokuapp.com/
 
-## How To run locally
+## Local environment
 1. Clone the repo.
 2. Run `npm install` 
 3. Run `npm run client-install`
