@@ -8,7 +8,7 @@ Implemented using the MERN stack.
 You will need NodeJS and npm installed and ready to go.
 
 ## Live App
-https://thearsenaladdict.herokuapp.com/
+[Heroku App](https://thearsenaladdict.herokuapp.com/)
 
 ## Local environment
 1. Clone the repo.
