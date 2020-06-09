@@ -57,7 +57,7 @@ export default function FixtureCard(props) {
         <CardText>
           <strong>
             {/*For now, just support EPL, and default competition names*/}
-            {sCompetition ? sCompetition : "English Premier League"}
+            {!sCompetition ? "English Premier League" :  sCompetition === 'FA'? 'FA Cup' : sCompetition}
           </strong>
         </CardText>
       </CardBody>
