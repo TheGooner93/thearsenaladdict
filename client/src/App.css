@@ -64,6 +64,10 @@ html, body {
   min-height: 13.3rem;
 }
 
+.app-card:hover {
+  background: white
+}
+
 .app-card-upcoming {}
 
 .app-card-latest {}
