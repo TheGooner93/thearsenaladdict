@@ -21,7 +21,7 @@ class FixtureList extends Component {
             <Row>
               <Col xs="12" sm="12" xl="12">
                 <div className="container app-headings border rounded">
-                  <h2>Latest</h2>
+                  <h2 style={{marginBottom : 0 , padding: '0.4rem 0 0.4rem 0'}}>Latest</h2>
                 </div>
               </Col>
             </Row>
@@ -48,7 +48,7 @@ class FixtureList extends Component {
             <Row>
               <Col xs="12" sm="12" xl="12">
                 <div className="container app-headings border rounded">
-                  <h2>Upcoming</h2>
+                  <h2 style={{marginBottom : 0 , padding: '0.4rem 0 0.4rem 0'}}>Upcoming</h2>
                 </div>
               </Col>
             </Row>
