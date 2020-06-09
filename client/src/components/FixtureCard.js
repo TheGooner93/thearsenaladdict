@@ -9,26 +9,27 @@ export default function FixtureCard(props) {
     sCompetition,
     compStartIndex,
     compEndIndex,
-    suffixStartIndex;
+    scoreStartIndex;
 
-  //If there is a competition prefix
+  //If there is a competition suffix
   if (fixture && fixture.SUMMARY.search(/\[\w+\]/g) !== -1) {
     compStartIndex = fixture.SUMMARY.search(/\[/g);
     compEndIndex = fixture.SUMMARY.search(/\]/g);
 
     sCompetition = fixture.SUMMARY.substring(compStartIndex + 1, compEndIndex);
 
-    sCardSubtitle = fixture.SUMMARY.substring(compEndIndex + 1).trim();
   }
   //If there is a score suffix
   if (sCardSubtitle.search(/\(\d+-\d+\)/g) !== -1) {
-    suffixStartIndex = sCardSubtitle.search(/\(\d+-\d+\)/g);
+    scoreStartIndex = sCardSubtitle.search(/\(\d+-\d+\)/g);
     ///sScore ie. score is derived from the sCardSubtitle which is nothing but a fixture.SUMMARY derivative
-    sScore = sCardSubtitle.substring(suffixStartIndex);
-    sCardSubtitle = sCardSubtitle.substring(0, suffixStartIndex).trim();
+    sScore = sCardSubtitle.substring(scoreStartIndex);
+    sCardSubtitle = sCardSubtitle.substring(0, scoreStartIndex).trim();
   } else {
     sScore = "";
   }
+  
+  sCardSubtitle = fixture.SUMMARY.substring(0, compStartIndex || scoreStartIndex).trim();
 
   return (
     <Card

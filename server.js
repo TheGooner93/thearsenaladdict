@@ -59,8 +59,10 @@ app.get("/fixtures", function(req, res) {
             sStartDate = new Date(parseIcalDate(fixture.DTSTART));
             sEndDate = new Date(parseIcalDate(fixture.DTEND));
             if (sEndDate < currentDate) {
-              //Past Fixtures
-              aPastFixtures.push(fixture);
+              //Past Fixtures, which have a score ie. have been completed
+              if(fixture.SUMMARY.search(/\(\d+-\d+\)/g) !== -1){
+                aPastFixtures.push(fixture);
+              }
             } else if (sStartDate <= currentDate && sEndDate >= currentDate) {
               //Current Fixtures
               oCurrentFixture = fixture;

@@ -13,7 +13,7 @@
     "jquery": "^3.5.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node --inspect server.js",
     "monitor": "nodemon server.js",
     "client-install": "npm install --prefix client",
     "client": "npm start --prefix client",
