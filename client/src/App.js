@@ -19,6 +19,7 @@ class App extends Component {
               <title>Arsenal FC Fixtures</title>
               <meta name='description' content="Your stop for Arsenal FC fixtures across leagues!" />
               <link rel='apple-touch-icon' href="./arsenal-icon.png" />
+              <link rel="canonical" href="https://thearsenaladdict.herokuapp.com"/>
             </Helmet>
             <Header />
             <FixtureList />
