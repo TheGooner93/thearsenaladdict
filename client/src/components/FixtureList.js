@@ -15,7 +15,7 @@ class FixtureList extends Component {
     const { latestFixture, futureFixtures, isLoading } = this.props.fixtures;
     return (
       <Container className="app-content">
-        {!isLoading ? (
+        {isLoading ? (
           <Col xs="12" sm="12" xl="12">
             Loading...
           </Col>
