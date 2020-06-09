@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
+import Helmet from 'react-helmet';
 
 import "./App.css";
 import Header from "./components/Header";
@@ -12,6 +13,10 @@ class App extends Component {
     return (
       <div className="app">
         <Provider store={store}>
+          <Helmet>
+            <title>Arsenal FC Fixtures</title>
+            <meta name='description' content="Your stop for Arsenal FC fixtures across leagues!" />
+          </Helmet>
           <Header />
           <FixtureList />
           <Footer />
