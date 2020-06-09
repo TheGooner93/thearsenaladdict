@@ -20,12 +20,12 @@ class FixtureList extends Component {
           <div>
             <Row>
               <Col xs="12" sm="12" xl="12">
-                <div className="container app-headings border rounded">
+                <div className="container app-headings">
                   <h2 style={{marginBottom : 0 , padding: '0.4rem 0 0.4rem 0'}}>Latest</h2>
                 </div>
               </Col>
             </Row>
-            <Row>
+            <Row className='mt-3'>
               {isLoading ? (
                 <Col xs="12" sm="12" xl="12">
                   <Spinner />
@@ -47,12 +47,12 @@ class FixtureList extends Component {
             </Row>
             <Row>
               <Col xs="12" sm="12" xl="12">
-                <div className="container app-headings border rounded">
+                <div className="container app-headings">
                   <h2 style={{marginBottom : 0 , padding: '0.4rem 0 0.4rem 0'}}>Upcoming</h2>
                 </div>
               </Col>
             </Row>
-            <Row>
+            <Row className='mt-3'>
               {isLoading ? (
                 <Col xs="12" sm="12" xl="12">
                   <Spinner />

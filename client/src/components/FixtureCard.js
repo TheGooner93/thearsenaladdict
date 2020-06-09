@@ -34,7 +34,8 @@ export default function FixtureCard(props) {
   return (
     <Card
       className={classnames(
-        "mt-1 mb-1",
+        "mb-3",
+        "app-card",
         {
           "app-card-latest": new Date(fixture.DTSTART) < new Date()
         },
@@ -48,7 +49,7 @@ export default function FixtureCard(props) {
           <h5 style={{ fontWeight: "bold" }}>{sScore}</h5>
         </CardTitle>
         <CardSubtitle>
-          <h6>{sCardSubtitle}</h6>
+          <h5>{sCardSubtitle}</h5>
         </CardSubtitle>
         <CardText>
           {new Date(fixture.DTSTART).toDateString()},

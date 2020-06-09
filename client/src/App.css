@@ -10,12 +10,15 @@ body {
   position: relative;
   min-height: 100vh;
   text-align: center;
+  margin : 5px 0;
 }
 
 .app-header {
-  margin-top: 5px;
-  background: linear-gradient(45deg, #fdc830 30%, #f37335 90%);
+  /* background: linear-gradient(45deg, #fdc830 30%, #f37335 90%); */
+  background: white;
   padding: 10px;
+  border: 1px solid black;
+  box-shadow: 5px 5px #063672;
 }
 
 .app-content {
@@ -30,8 +33,11 @@ body {
 }
 
 .app-footer {
-  background: linear-gradient(45deg, #fdc830 30%, #f37335 90%);
+  /* background: linear-gradient(45deg, #fdc830 30%, #f37335 90%); */
   height: 40px;
+  background: white;
+  border: 1px solid black;
+  box-shadow: 5px 5px #063672;
 }
 
 .app-footer-content {
@@ -41,42 +47,35 @@ body {
 .app-headings {
   text-align: left;
   border-radius: 7px;
-  background: linear-gradient(45deg, #ffdf00 30%, #9c824a 90%);
+  /* background: linear-gradient(45deg, #ffdf00 30%, #9c824a 90%); */
+  background: white;
+  box-shadow: 5px 5px #9C824A;
+  border: 1px solid black;
+}
+
+.app-card {
+  color: black;
+  border-radius: 7px;
+  border: 1px solid black;
+  /* background: linear-gradient(45deg, #007ff7 30%, #0a27aa 90%); */
+  background: white;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 5px 5px #DB0007;
+  min-height : 10.5rem;
 }
 
 .app-card-upcoming {
-  color: whitesmoke;
-  border-radius: 7px;
-  background: linear-gradient(45deg, #aa5252 30%, #e44537 90%);
-  transition: all 0.2s ease-in-out;
+  /* color: whitesmoke; */
+  /* background: linear-gradient(45deg, #aa5252 30%, #e44537 90%); */
 }
 
 .app-card-latest {
-  color: whitesmoke;
-  border-radius: 7px;
-  background: linear-gradient(45deg, #007ff7 30%, #0a27aa 90%);
-  transition: all 0.2s ease-in-out;
+   /* color: whitesmoke; */
+  /* background: linear-gradient(45deg, #007ff7 30%, #0a27aa 90%); */
 }
 
 @media (hover: hover) {
-  .app-card-upcoming:hover {
-    transform: scale(1.05);
-    /* background-image: url("https://media.giphy.com/media/8vF1liUI4PWxVZLZx0/giphy.gif");
-    background-repeat: no-repeat; */
-  }
-  .app-card-latest:hover {
-    transform: scale(1.05);
+  .app-card {
+    /* transform: scale(1.05); */
   }
 }
-
-/* video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -10;
-  transform: translate(-50%, -50%);
-} */
