@@ -6,6 +6,7 @@
     "axios": "^0.18.1",
     "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
+    "moment": "^2.26.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "^10.2.0",

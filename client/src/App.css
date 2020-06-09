@@ -61,7 +61,7 @@ html, body {
   background: gold;
   transition: all 0.2s ease-in-out;
   box-shadow: 5px 5px #DB0007;
-  min-height: 11rem;
+  min-height: 13.3rem;
 }
 
 .app-card-upcoming {}

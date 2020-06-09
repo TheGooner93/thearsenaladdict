@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
 import classnames from "classnames";
+import moment from 'moment';
 
 export default function FixtureCard(props) {
   const { fixture } = props;
@@ -55,10 +56,11 @@ export default function FixtureCard(props) {
         <CardTitle>
           <h5>{sCardSubtitle}</h5>
         </CardTitle>
-        <CardText>
-          {new Date(fixture.DTSTART).toDateString()},
-          {new Date(fixture.DTSTART).toLocaleTimeString()}
-        </CardText>
+        <CardText>{moment(fixture.DTSTART).format('dddd')}</CardText>
+        <CardText>{moment(fixture.DTSTART).format('D MMM YYYY, h:mm A')}</CardText>
+          {/* {moment(fixture.DTSTART).format('D MMM YYYY, hh:mm A')}
+          {moment(fixture.DTSTART).format('D MMM YYYY, hh:mm A')} */}
+        {/* </CardText> */}
         <CardText>
           <strong>
             {/*For now, just support EPL, and default competition names*/}
