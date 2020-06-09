@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "concurrently": "^4.1.0",
+    "concurrently": "^4.1.2",
     "download-file": "^0.1.5",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
     "ical-date-parser": "^4.0.0",
     "ical2json": "^1.2.0",
-    "jquery": "^3.2.1"
+    "jquery": "^3.5.1"
   },
   "scripts": {
     "start": "node server.js",
@@ -22,7 +22,7 @@
   },
   "main": "server.js",
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.19.4"
   },
   "keywords": [],
   "author": "Mohammed Ehab",
