@@ -1,43 +1,44 @@
-html,
-body {
+html, body {
   height: 100%;
+  background-color: white;
 }
 
 #root {
   min-height: 100vh;
 }
+
 .app {
   position: relative;
   min-height: 100vh;
   text-align: center;
-  margin : 5px 0;
+  margin: 5px 0;
 }
 
 .app-header {
-  /* background: linear-gradient(45deg, #fdc830 30%, #f37335 90%); */
-  background: white;
+  background: rgb(60, 39, 214);
   padding: 10px;
   border: 1px solid black;
   box-shadow: 5px 5px #063672;
+  color: white !important;
+}
+
+.app-footer-wrapper {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+}
+
+.app-footer {
+  height: 40px;
+  background: #6050DC;
+  border: 1px solid black;
+  box-shadow: 5px 5px #063672;
+  color: white;
 }
 
 .app-content {
   padding-bottom: 50px;
-}
-.app-footer-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-bottom: 5px;
-}
-
-.app-footer {
-  /* background: linear-gradient(45deg, #fdc830 30%, #f37335 90%); */
-  height: 40px;
-  background: white;
-  border: 1px solid black;
-  box-shadow: 5px 5px #063672;
 }
 
 .app-footer-content {
@@ -47,35 +48,22 @@ body {
 .app-headings {
   text-align: left;
   border-radius: 7px;
-  /* background: linear-gradient(45deg, #ffdf00 30%, #9c824a 90%); */
-  background: white;
+  background: #DB0007;
   box-shadow: 5px 5px #9C824A;
   border: 1px solid black;
+  color: white;
 }
 
 .app-card {
   color: black;
   border-radius: 7px;
   border: 1px solid black;
-  /* background: linear-gradient(45deg, #007ff7 30%, #0a27aa 90%); */
-  background: white;
+  background: gold;
   transition: all 0.2s ease-in-out;
   box-shadow: 5px 5px #DB0007;
-  min-height : 10.5rem;
+  min-height: 11rem;
 }
 
-.app-card-upcoming {
-  /* color: whitesmoke; */
-  /* background: linear-gradient(45deg, #aa5252 30%, #e44537 90%); */
-}
+.app-card-upcoming {}
 
-.app-card-latest {
-   /* color: whitesmoke; */
-  /* background: linear-gradient(45deg, #007ff7 30%, #0a27aa 90%); */
-}
-
-@media (hover: hover) {
-  .app-card {
-    /* transform: scale(1.05); */
-  }
-}
+.app-card-latest {}

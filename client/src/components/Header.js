@@ -6,17 +6,15 @@ import classNames from 'classnames';
 class AllFixtures extends Component {
   render() {
     const {
-      classes : {
+      classes: {
         imageStyle = {}
       }
     } = this.props;
-    
+
     return (
       <Container>
         <Navbar light className="mb-3 rounded app-header">
-          <NavbarBrand href="/">
-            <h2>The Arsenal Addict</h2>
-          </NavbarBrand>
+          <h2 style={{marginBottom : 0}}>The Arsenal Addict</h2>
           <div className={classNames("level-right"), imageStyle}>
             {" "}
             <img
@@ -32,7 +30,7 @@ class AllFixtures extends Component {
 }
 
 const jssStyles = {
-  imageStyle : {
+  imageStyle: {
     '@media (max-width: 490px)': {
       display: 'none'
     }

@@ -28,7 +28,7 @@ export default function FixtureCard(props) {
   } else {
     sScore = "";
   }
-  
+
   sCardSubtitle = fixture.SUMMARY.substring(0, compStartIndex || scoreStartIndex).trim();
 
   return (
@@ -45,12 +45,16 @@ export default function FixtureCard(props) {
       )}
     >
       <CardBody>
+        {sScore ?
+          <CardTitle>
+            <h5 style={{ fontWeight: "bold" }}>{sScore}</h5>
+          </CardTitle>
+          :
+         <div className="mt-2"/>
+        }
         <CardTitle>
-          <h5 style={{ fontWeight: "bold" }}>{sScore}</h5>
-        </CardTitle>
-        <CardSubtitle>
           <h5>{sCardSubtitle}</h5>
-        </CardSubtitle>
+        </CardTitle>
         <CardText>
           {new Date(fixture.DTSTART).toDateString()},
           {new Date(fixture.DTSTART).toLocaleTimeString()}
@@ -58,7 +62,7 @@ export default function FixtureCard(props) {
         <CardText>
           <strong>
             {/*For now, just support EPL, and default competition names*/}
-            {!sCompetition ? "English Premier League" :  sCompetition === 'FA'? 'FA Cup' : sCompetition}
+            {!sCompetition ? "English Premier League" : sCompetition === 'FA' ? 'FA Cup' : sCompetition}
           </strong>
         </CardText>
       </CardBody>
