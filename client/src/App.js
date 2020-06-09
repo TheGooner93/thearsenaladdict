@@ -16,6 +16,7 @@ class App extends Component {
           <Helmet>
             <title>Arsenal FC Fixtures</title>
             <meta name='description' content="Your stop for Arsenal FC fixtures across leagues!" />
+            <link rel='apple-touch-icon' href="./arsenal-icon.png" />
           </Helmet>
           <Header />
           <FixtureList />
