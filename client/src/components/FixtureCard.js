@@ -11,7 +11,8 @@ export default function FixtureCard(props) {
   const onCardClick = () => {
     helper.registerGAEvent({
       category: 'Click',
-      action : 'Fixture card clicked'
+      action : 'Fixture Card clicked',
+      label: 'Fixture Card'
     });
   };
 

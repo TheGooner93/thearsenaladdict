@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "reactstrap";
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import { OutboundLink } from 'react-ga';
 
 function Footer(props) {
   const {
@@ -13,9 +14,13 @@ function Footer(props) {
     <Container className="mt-3 app-footer-wrapper">
       <footer className="app-footer rounded">
         <div className="app-footer-content">
-          <a href="https://github.com/TheGooner93/thearsenaladdict">
-            <i className={classNames("fab fa-github", iconStyle)}/>
-          </a>
+          <OutboundLink
+            eventLabel="Github Repo"
+            to="https://github.com/TheGooner93/thearsenaladdict"
+            target="_blank"
+          >
+            <i className={classNames("fab fa-github", iconStyle)} />
+          </OutboundLink>
           <span>| © {new Date().getFullYear()}</span>
         </div>
       </footer>
@@ -24,11 +29,11 @@ function Footer(props) {
 }
 
 const jssStyles = {
-  iconStyle : {
+  iconStyle: {
     marginRight: '0.75rem',
-    color: 'white', 
-    '&:hover' : {
-      color : 'red'
+    color: 'white',
+    '&:hover': {
+      color: 'red'
     }
   }
 }
