@@ -7,7 +7,7 @@ import { OutboundLink } from 'react-ga';
 function Footer(props) {
   const {
     classes: {
-      iconStyle = {}
+      outboundLinkStyle = {}
     }
   } = props;
   return (
@@ -19,9 +19,19 @@ function Footer(props) {
             to="https://github.com/TheGooner93/thearsenaladdict"
             target="_blank"
           >
-            <i className={classNames("fab fa-github", iconStyle)} />
+            <i className={classNames("fab fa-github mr-2", outboundLinkStyle)} />
           </OutboundLink>
-          <span>| © {new Date().getFullYear()}</span>
+          <span>| </span>
+          <OutboundLink
+            eventLabel="My Portfolio"
+            to="https://mohammedehab.com/"
+            target="_blank"
+          >
+            <span className={classNames(outboundLinkStyle)}>
+              <span className={'mr-1'}>©</span>
+              <span>{new Date().getFullYear()}</span>
+            </span>
+          </OutboundLink>
         </div>
       </footer>
     </Container>
@@ -29,13 +39,12 @@ function Footer(props) {
 }
 
 const jssStyles = {
-  iconStyle: {
-    marginRight: '0.75rem',
+  outboundLinkStyle: {
     color: 'white',
     '&:hover': {
       color: 'red'
     }
-  }
+  },
 }
 
 export default injectSheet(jssStyles)(Footer);
