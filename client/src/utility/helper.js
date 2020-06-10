@@ -4,6 +4,10 @@ const initializeGA = () => {
     ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
 };
 
+const registerGAPageView = (path) => {
+    ReactGA.pageview(path);
+};
+
 const registerGAEvent = (event) => {
     const { 
         category = '',
@@ -18,5 +22,6 @@ const registerGAEvent = (event) => {
 
 export default {
     initializeGA,
+    registerGAPageView,
     registerGAEvent
 };

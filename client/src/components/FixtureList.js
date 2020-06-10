@@ -5,11 +5,14 @@ import { connect } from "react-redux";
 
 import { getFixtures } from "../actions/fixtureActions";
 import FixtureCard from "./FixtureCard";
+import helper from '../utility/helper';
 
 class FixtureList extends Component {
   componentDidMount() {
+
     //Fetch all fixtures
     this.props.getFixtures();
+    helper.registerGAPageView(window.location.pathname);
   }
   render() {
     const { latestFixture, futureFixtures, isLoading } = this.props.fixtures;
