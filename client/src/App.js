@@ -8,8 +8,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FixtureList from "./components/FixtureList";
 import store from "./store";
+import helper from './utility/helper';
 
 class App extends Component {
+  componentDidMount() {
+    helper.initializeGA();
+  };
+
   render() {
     return (
       <HTTPSRedirect>

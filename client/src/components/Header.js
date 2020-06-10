@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Navbar, NavbarBrand } from "reactstrap";
+import { Container, Navbar } from "reactstrap";
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 
@@ -15,7 +15,7 @@ class AllFixtures extends Component {
       <Container>
         <Navbar light className="mb-3 rounded app-header">
           <h2 style={{marginBottom : 0}}>The Arsenal Addict</h2>
-          <div className={classNames("level-right"), imageStyle}>
+          <div className={classNames("level-right", imageStyle)}>
             {" "}
             <img
               src="../arsenal-icon.png"

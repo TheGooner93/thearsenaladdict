@@ -1,10 +1,20 @@
 import React from "react";
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
+import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import classnames from "classnames";
 import moment from 'moment';
 
+import helper from '../utility/helper';
+
 export default function FixtureCard(props) {
   const { fixture } = props;
+
+  const onCardClick = () => {
+    helper.registerGAEvent({
+      category: 'Click',
+      action : 'Fixture card clicked'
+    });
+  };
+
   var sScore,
     sCardSubtitle = fixture.SUMMARY,
     sCompetition,
@@ -44,6 +54,7 @@ export default function FixtureCard(props) {
           "app-card-upcoming": new Date(fixture.DTSTART) > new Date()
         }
       )}
+      onClick={onCardClick}
     >
       <CardBody>
         {sScore ?
