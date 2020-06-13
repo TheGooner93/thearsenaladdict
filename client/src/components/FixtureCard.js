@@ -42,7 +42,6 @@ export default function FixtureCard(props) {
   }
 
   sCardSubtitle = fixture.SUMMARY.substring(0, compStartIndex || scoreStartIndex).trim();
-
   return (
     <Card
       className={classnames(
@@ -70,9 +69,7 @@ export default function FixtureCard(props) {
         </CardTitle>
         <CardText>{moment(fixture.DTSTART).format('dddd')}</CardText>
         <CardText>{moment(fixture.DTSTART).format('D MMM YYYY, h:mm A')}</CardText>
-          {/* {moment(fixture.DTSTART).format('D MMM YYYY, hh:mm A')}
-          {moment(fixture.DTSTART).format('D MMM YYYY, hh:mm A')} */}
-        {/* </CardText> */}
+        <CardText>{moment(fixture.DTSTART).toDate().toString().match(/\((.*)\)/)[1]}</CardText>
         <CardText>
           <strong>
             {/*For now, just support EPL, and default competition names*/}
