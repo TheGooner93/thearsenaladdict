@@ -15,9 +15,9 @@ const options = {
 };
 
 //On start of server, download the ICS and build JSON
-download(url, options, function(err) {
+download(url, options, function (err) {
   if (!err) {
-    fileReadPromise = new Promise(function(resolve, reject) {
+    fileReadPromise = new Promise(function (resolve, reject) {
       var oFileContents = fs.readFile("./arsenal.ics", (err, data) => {
         if (err) {
           throw err;
@@ -31,21 +31,31 @@ download(url, options, function(err) {
 });
 
 //Main route to fetch all the fixtures
-app.get("/fixtures", function(req, res) {
+app.get("/fixtures", function (req, res) {
   //Execute only on resolving of file read Promise created on server startup
   fileReadPromise &&
     fileReadPromise
-      .then(function(fileContents) {
+      .then(function (fileContents) {
         var arsenalCalendarJSON = {};
         //Build JSON data
         arsenalCalendarJSON = ical2json.convert(fileContents.toString());
 
         var currentDate = new Date();
-        var aInterimFixtures =
+        var aInterim1Fixtures =
           arsenalCalendarJSON &&
           arsenalCalendarJSON.VCALENDAR &&
           arsenalCalendarJSON.VCALENDAR[0] &&
-          arsenalCalendarJSON.VCALENDAR[0].VEVENT;
+          arsenalCalendarJSON.VCALENDAR[0].VEVENT
+        const aInterimFixtures = aInterim1Fixtures.map(fixture => {
+          if (fixture.UID === "lnSzqf0F2D3acbOPh54YmBJIsKF4Kdun3pBXb3Yx@maak-agenda.nl") {
+            return {
+              ...fixture,
+              SUMMARY: fixture.SUMMARY + "(3-0)"
+            }
+          }
+          return fixture;
+        });
+
         var sStartDate,
           sEndDate,
           aPastFixtures = [],
@@ -55,12 +65,13 @@ app.get("/fixtures", function(req, res) {
 
         //Separate past, current and future fixtures
         if (aInterimFixtures && aInterimFixtures.length) {
+
           for (var fixture of aInterimFixtures) {
             sStartDate = new Date(parseIcalDate(fixture.DTSTART));
             sEndDate = new Date(parseIcalDate(fixture.DTEND));
             if (sEndDate < currentDate) {
               //Past Fixtures, which have a score ie. have been completed
-              if(fixture.SUMMARY.search(/\(\d+-\d+\)/g) !== -1){
+              if (fixture.SUMMARY.search(/\(\d+-\d+\)/g) !== -1) {
                 aPastFixtures.push(fixture);
               }
             } else if (sStartDate <= currentDate && sEndDate >= currentDate) {
@@ -103,7 +114,7 @@ app.get("/fixtures", function(req, res) {
           });
         }
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log("Error:" + err);
       });
 });
