@@ -31,7 +31,7 @@ html, body {
 
 .app-footer {
   height: 40px;
-  background: #6050DC;
+  background: rgb(60, 39, 214);
   border: 1px solid black;
   box-shadow: 5px 5px #063672;
   color: white;
