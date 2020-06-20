@@ -18,7 +18,7 @@ const options = {
 download(url, options, function (err) {
   if (!err) {
     fileReadPromise = new Promise(function (resolve, reject) {
-      var oFileContents = fs.readFile("./arsenal.ics", (err, data) => {
+      fs.readFile("./arsenal.ics", (err, data) => {
         if (err) {
           throw err;
         }
@@ -47,10 +47,10 @@ app.get("/fixtures", function (req, res) {
           arsenalCalendarJSON.VCALENDAR[0] &&
           arsenalCalendarJSON.VCALENDAR[0].VEVENT
         const aInterimFixtures = aInterim1Fixtures.map(fixture => {
-          if (fixture.UID === "lnSzqf0F2D3acbOPh54YmBJIsKF4Kdun3pBXb3Yx@maak-agenda.nl") {
+          if (fixture.UID === 'KjW9XpHpKz0Ozyolz0ZMKTO0qfG1fbUB4FLyJElP@maak-agenda.nl') {
             return {
               ...fixture,
-              SUMMARY: fixture.SUMMARY + "(3-0)"
+              SUMMARY: fixture.SUMMARY + "(2-1)"
             }
           }
           return fixture;
