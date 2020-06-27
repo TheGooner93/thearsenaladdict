@@ -41,20 +41,20 @@ app.get("/fixtures", function (req, res) {
         arsenalCalendarJSON = ical2json.convert(fileContents.toString());
 
         var currentDate = new Date();
-        var aInterim1Fixtures =
+        var aInterimFixtures =
           arsenalCalendarJSON &&
           arsenalCalendarJSON.VCALENDAR &&
           arsenalCalendarJSON.VCALENDAR[0] &&
           arsenalCalendarJSON.VCALENDAR[0].VEVENT
-        const aInterimFixtures = aInterim1Fixtures.map(fixture => {
-          if (fixture.UID === 'KjW9XpHpKz0Ozyolz0ZMKTO0qfG1fbUB4FLyJElP@maak-agenda.nl') {
-            return {
-              ...fixture,
-              SUMMARY: fixture.SUMMARY + "(2-1)"
-            }
-          }
-          return fixture;
-        });
+        // const aInterimFixtures = aInterim1Fixtures.map(fixture => {
+        //   if (fixture.UID === 'KjW9XpHpKz0Ozyolz0ZMKTO0qfG1fbUB4FLyJElP@maak-agenda.nl') {
+        //     return {
+        //       ...fixture,
+        //       SUMMARY: fixture.SUMMARY + "(2-1)"
+        //     }
+        //   }
+        //   return fixture;
+        // });
 
         var sStartDate,
           sEndDate,
